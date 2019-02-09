@@ -8,7 +8,7 @@
     <?php echo date("Y-m-d H:i:s",$msg->utime);?>
         <a href="<?php  URL::action('DeleteController@del',['id'=>$post->id]); ?>">删除</a>
         //删除留言的链接
-        <a href="<?php  URL::action('DeleteController@del',['id'=>$post->id]); ?>">修改</a>
+        <a href="<?php  URL::action('EditController@del',['id'=>$post->id]); ?>">修改</a>
        //修改留言
         <a href="<?php
         $mid = $msg->id ;
