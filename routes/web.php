@@ -34,8 +34,9 @@ Auth::routes();
 //    Route::get('/comment/blog/{bid}' , 'commentController@getCommentByBlog');
 //});
 
-Route::get('index', 'AddPostController@index');//留言列表路由
-Route::get('add', 'AddPostController@add');//留言添加界面展示
-Route::post('add', 'AddPostController@addPost');//处理留言添加
-Route::match(['get','post'],'edit/{id}', 'AddPostController@edit')->where('id','[0-9]{1,3}');//同时处理留言编辑的界面展示和提交修改留言功能
-Route::get('del/{id}', 'DeleteController@del')->where('id','[0-9]{1,3}') ;//删除留言
+Route::get('index', 'AddPostController@index');//博文列表路由
+Route::request('add', 'AddPostController@add');//博文添加界面展示
+Route::post('addPost', 'AddPostController@addPost');//处理博文添加
+Route::match(['get','post'],'/edit/{id}', 'AddPostController@edit')->where('id','[0-9]{1,3}');//同时处理留言编辑的界面展示和提交修改留言功能
+Route::get('del/{id}', 'DeleteController@del')->where('id','[0-9]{1,3}') ;//删除博文
+Route::request('comment', 'CommentController@Comment');//评论路由

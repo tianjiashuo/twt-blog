@@ -9,17 +9,17 @@
 namespace App\Http\Controllers;
 use DB;
 
-class AddPostController
+class AddPostController extends Controller
 {
     public function addPost()
     {
-        $data = ['uname' => $_POST['uname'], 'content' => $_POST['content']];
+        $data = ['uname' => $_REQUEST['uname'], 'content' => $_REQUEST['content']];
         $data['addtime'] = time();
-        $res = DB::table('comment')->insert($data);
+        $res = DB::table('msq')->insert($data);
         if ($res) {
-            return '添加留言成功！';
+            header ("postmessage.balde.php");
         } else {
-            return '添加留言失败！';
+            return '添加博文失败！';
         }
     }
 

@@ -10,14 +10,25 @@ namespace App\Http\Controllers;
 
 
 class DeleteController
+
 {
+
     public function changeBlog($id){
-    	$uid = $id;
-    	$affected = DB::update('update msg set flag = 0 where id = ?', [$uid]);
+
+        $uid = $id;
+
+        $affected = DB::update('update msg set flag = 0 where id = ?', [$uid]);
+
     }
 
+
+
     public function displayBlog(){
-    	$Blogs = DB::select('select content from msg where flag = ?',[1]);
-        return view('postmessage',['content' => $Blogs]); 
+
+        $Blogs = DB::select('select content from msg where flag = ?',[1]);
+
+        return view('postmessage',['content' => $Blogs]);
+
     }
+
 }
