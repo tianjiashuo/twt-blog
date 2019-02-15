@@ -17,7 +17,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home' , 'HomeController@index')->name('home');
+Route::get('/home/{uname}' , 'HomeController@index');
 //
 //Route::group(['prefix'=>'visiter' , 'middleware' => 'test'] , function(){
 //    Route::get('/blog' , 'BlogController@getAllBlog');//完成了

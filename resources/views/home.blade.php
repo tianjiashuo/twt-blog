@@ -13,8 +13,21 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
-                    You are logged in!
+                    <h2>
+                    Welcome, {{$username}}
+                    </h2>
+                    <br>
+                    <br>
+                    <h3>
+                    Your Blogs:
+                    </h3>
+                    <br>
+                    <font size = "3">
+                    @for($i = 0; $i < count($blogs) ; $i ++)
+                    {{$blogs[$i]-> title}}
+                    </font>
+                    <br>
+                    @endfor
                 </div>
             </div>
         </div>

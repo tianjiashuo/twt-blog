@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -21,8 +22,11 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($uname)
     {
-        return view('home');
+        $uid = $uname;
+        $Blogs = DB::select('select title from msg where uname = ?',[$uid]);
+        //var_dump($Blogs);
+        return view('home',['username'=> $uid,'blogs' => $Blogs]);
     }
 }
