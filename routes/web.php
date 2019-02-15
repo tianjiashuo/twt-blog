@@ -17,7 +17,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-//Route::get('/home' , 'HomeController@index')->name('home');
+Route::get('/home' , 'HomeController@index')->name('home');
 //
 //Route::group(['prefix'=>'visiter' , 'middleware' => 'test'] , function(){
 //    Route::get('/blog' , 'BlogController@getAllBlog');//完成了
@@ -35,8 +35,8 @@ Auth::routes();
 //});
 
 Route::get('index', 'AddPostController@index');//博文列表路由
-Route::request('add', 'AddPostController@add');//博文添加界面展示
+Route::get('add', 'AddPostController@add');//博文添加界面展示
 Route::post('addPost', 'AddPostController@addPost');//处理博文添加
 Route::match(['get','post'],'/edit/{id}', 'AddPostController@edit')->where('id','[0-9]{1,3}');//同时处理留言编辑的界面展示和提交修改留言功能
 Route::get('del/{id}', 'DeleteController@del')->where('id','[0-9]{1,3}') ;//删除博文
-Route::request('comment', 'CommentController@Comment');//评论路由
+Route::get('comment', 'CommentController@Comment');//评论路由

@@ -16,10 +16,10 @@ class CommentController
         $inform = ['comment' => $_REQUEST['comment']];
         $sqlm = "INSERT INTO comment (mid) values ('$mid')";//存储评论(???)
         if($inform and $sqlm ){
-            header ("postmessage.balde.php");//跳转展示界面
+            return view('postmessage');//跳转展示界面
         }
         else{
-            echo '发表评论失败';
+             return "发表评论失败";
         }
 
 
