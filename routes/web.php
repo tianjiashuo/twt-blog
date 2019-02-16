@@ -40,8 +40,7 @@ Route::post('addPost', 'AddPostController@addPost');//处理博文添加
 Route::match(['get','post'],'/edit/{id}', 'AddPostController@edit')->where('id','[0-9]{1,3}');//同时处理留言编辑的界面展示和提交修改留言功能
 Route::get('del/{id}', 'DeleteController@del')->where('id','[0-9]{1,3}') ;//删除博文
 Route::get('comment', 'CommentController@Comment');//评论路由
-Route::get ('postmessage/', function(){
-        return view ('postmessage');
-});
+Route::get('postmessage/', function(){return view ('postmessage');});
+Route::get('/displayBlog/{mid}','displayBlogController@displayBlog');
 
 
