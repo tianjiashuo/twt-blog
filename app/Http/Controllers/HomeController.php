@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -22,13 +23,14 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($uname)
+    public function index()
     {
-        $uid = $uname;
-        $Blogs = DB::select('select title from msg where uname = ?',[$uid]);
-        $Time = DB::select('select addtime from msg where uname = ?',[$uid]);
+        $username = Auth::user()->name;
+        //$uid = $uname;
+        $Blogs = DB::select('select title from msg where uname = ?',[$username]);
+        $Time = DB::select('select addtime from msg where uname = ?',[$username]);
         //var_dump($Time);
         //var_dump($Blogs);
-        return view('home',['username'=> $uid,'blogs' => $Blogs,'time' => $Time]);
+        return view('home',['username'=> $username,'blogs' => $Blogs,'time' => $Time]);
     }
 }
