@@ -42,5 +42,5 @@ Route::get('del/{id}', 'DeleteController@del')->where('id','[0-9]{1,3}') ;//删�
 Route::get('comment', 'CommentController@Comment');//评论路由
 Route::get('postmessage/', function(){return view ('postmessage');});
 Route::get('/displayBlog/{mid}','displayBlogController@displayBlog');
-
-
+Route::get('allBlog/', function(){return view ('allBlog');});
+Route::get('displayBlog/', function(){return view ('displayBlog');});

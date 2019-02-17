@@ -29,8 +29,10 @@ class HomeController extends Controller
         //$uid = $uname;
         $Blogs = DB::select('select title from msg where uname = ?',[$username]);
         $Time = DB::select('select addtime from msg where uname = ?',[$username]);
+        $BlogID = DB::select('select mid from msg where title = ?',[$Blogs]);
+
         //var_dump($Time);
         //var_dump($Blogs);
-        return view('home',['username'=> $username,'blogs' => $Blogs,'time' => $Time]);
+        return view('home',['username'=> $username,'blogs' => $Blogs,'time' => $Time ,'BlogID' => $BlogID]);
     }
 }
