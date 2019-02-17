@@ -23,8 +23,8 @@
                     </h3>
                     <br>
                     <font size = "3">
-                    @for($i = 0; $i < count($blogs) ; $i ++)
-                    {{$blogs[$i]-> title}}&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{$time[$i]-> addtime}}
+                    @for($i = 0; $i < count($Blogs) ; $i ++)
+                    <a href ="http://127.0.0.0:8080/displayBlog/{{$Blogs[$i]->mid}}">{{$Blogs[$i] -> title}}</a> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{$Blogs[$i]-> addtime}}
                     </font>
                     <br>
                     @endfor

@@ -17,13 +17,13 @@
                     {{$Blogs[0]-> title}}
                     </h1>
                     <h3>
-                        {{$Author[0]-> uname}}
+                        {{$Blogs[0]-> uname}}
                     </h3>
                     <br>
                     <font size = '3'>
-                        {{$Content[0]-> content}}
+                        {{$Blogs[0]-> content}}
                         <br>
-                        {{$Time[0]-> addtime}}
+                        {{$Blogs[0]-> addtime}}
                     </font>
                     <br>
                     <h3>
@@ -31,14 +31,14 @@
                     </h3>
                     <br>
                     <font size = '3'>
-                    @for($i = 0; $i < count($CommentID) ; $i ++)
-                    {{$CommentID[$i]-> cid}}
+                    @for($i = 0; $i < count($Comment) ; $i ++)
+                    {{$Comment[$i]-> cid}}
                     &nbsp&nbsp&nbsp
-                    {{$CommentUsername[$i]-> uname}}
+                    {{$Comment[$i]-> uname}}
                     <br>
-                    {{$CommentContent[$i]-> content}}
+                    {{$Comment[$i]-> content}}
                     <br>
-                    {{$CommentTime[$i]-> addtime}}
+                    {{$Comment[$i]-> addtime}}
                     </font>
                     <br>
                     @endfor     

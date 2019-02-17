@@ -27,10 +27,11 @@ class HomeController extends Controller
     {
         $username = Auth::user()->name;
         //$uid = $uname;
-        $Blogs = DB::select('select title from msg where uname = ?',[$username]);
-        $Time = DB::select('select addtime from msg where uname = ?',[$username]);
+        $Blogs = DB::select('select * from msg where uname = ?',[$username]);
+        //$Blogs = DB::select('select title from msg where uname = ?',[$username]);
+        //$Time = DB::select('select addtime from msg where uname = ?',[$username]);
         //var_dump($Time);
         //var_dump($Blogs);
-        return view('home',['username'=> $username,'blogs' => $Blogs,'time' => $Time]);
+        return view('home',['username'=> $username,'Blogs'=> $Blogs]);
     }
 }
