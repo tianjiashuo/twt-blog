@@ -39,6 +39,6 @@ class displayBlogController extends Controller
         //$CommentID = DB::select('select cid from comment where mid = ?',[$mid]);
         //var_dump($Time);
         //var_dump($Blogs);
-        return view('displayBlog',['Blogs'=> $Blogs]);
+        return view('displayBlog',['Blogs'=> $Blogs,'Comment'=> $Comment]);
     }
 }
