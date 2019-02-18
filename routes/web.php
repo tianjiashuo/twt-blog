@@ -43,5 +43,8 @@ Route::get('comment', 'CommentController@Comment');//评论路由
 Route::get('/displayBlog/{mid}','displayBlogController@displayBlog');
 Route::get('AllBlogs/', function(){return view ('AllBlogs');});
 Route::get('/AllBlogs','AllBlogsController@AllBlogs');
+Route::get('GivenBlogs/', function(){return view ('GivenBlogs');});
+Route::get('/GivenBlogs/{uname}','GivenBlogsController@GivenBlogs');
+
 
 
