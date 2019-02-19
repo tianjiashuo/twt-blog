@@ -13,22 +13,16 @@ class DeleteController
 
 {
 
-    public function changeBlog($id){
-
-        $uid = $id;
-
-        $affected = DB::update('update msg set flag = 0 where id = ?', [$uid]);
-
+    public function changeBlog($mid){
+        $affected = DB::update('update msg set is_delete = 1 where mid = ?', [$mid]);
     }
 
 
 
-    public function displayBlog(){
+    /*public function displayBlog(){
+        $Blogs = DB::select('select * from msg where is_delete = ?',[0]);
+        return view('AllBlogs',['Blogs' => $Blogs ]);
 
-        $Blogs = DB::select('select content from msg where flag = ?',[1]);
-
-        return view('postmessage',['content' => $Blogs]);
-
-    }
+    }*/
 
 }

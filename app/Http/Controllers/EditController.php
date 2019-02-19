@@ -14,13 +14,13 @@ class EditController
 
 {
 
-    public function edit($id){
+    public function edit($mid){
 
         if($_POST){
 
             $data=[‘uname’=>$_POST[‘uname’],’email’=>$_POST[’email’],’content’=>$_POST[‘content’]];
 
-            $save=DB::table(‘msg’)->where(‘id’,$id)->update($data);
+            $save=DB::table(‘msg’)->where(‘id’,$mid)->update($data);
 
             if($save!==false){
 
@@ -34,9 +34,9 @@ class EditController
 
         }else{
 
-            $msg=DB::table(‘msg’)->where(‘id’,$id)->first();
+            $msg=DB::table(‘msg’)->where(‘id’,$mid)->first();
 
-            return view(‘editmessage’,[‘msg’=>$msg]);
+            return view(‘EditBlog’,[‘msg’=>$msg]);
 
         }
 

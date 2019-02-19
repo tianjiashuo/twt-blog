@@ -9,15 +9,16 @@
 namespace App\Http\Controllers;
 use DB;
 
-class AddPostController extends Controller
+class AddBlogController extends Controller
 {
-    public function addPost()
+    public function addBlog()
     {
         $data = ['uname' => $_REQUEST['uname'], 'content' => $_REQUEST['content']];
         $data['addtime'] = time();
-        $res = DB::table('msq')->insert($data);
+        $res = DB::table('msg')->insert($data);
         if ($res) {
-            header ("postmessage.balde.php");
+            return view(‘AllBlogs’);
+
         } else {
             return '添加博文失败！';
         }

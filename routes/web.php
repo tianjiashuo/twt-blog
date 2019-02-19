@@ -34,17 +34,23 @@ Route::get('/home' , 'HomeController@index');
 //    Route::get('/comment/blog/{bid}' , 'commentController@getCommentByBlog');
 //});
 
-Route::get('index', 'AddPostController@index');//博文列表路由
-Route::get('add', 'AddPostController@add');//博文添加界面展示
-Route::post('addPost', 'AddPostController@addPost');//处理博文添加
+Route::get('index', 'AddBlogController@index');//博文列表路由
 Route::match(['get','post'],'/edit/{id}', 'AddPostController@edit')->where('id','[0-9]{1,3}');//同时处理留言编辑的界面展示和提交修改留言功能
-Route::get('del/{id}', 'DeleteController@del')->where('id','[0-9]{1,3}') ;//删除博文
+//Route::get('DeleteBlog', 'DeleteController@displayBlog');//删除博文
+Route::get('DeleteBlog', 'DeleteController@changeBlog');//删除博文
+Route::get('DeleteBlog/{mid}', function(){return view ('DeleteBlog');});
+
 Route::get('comment', 'CommentController@Comment');//评论路由
 Route::get('/displayBlog/{mid}','displayBlogController@displayBlog');
-Route::get('AllBlogs/', function(){return view ('AllBlogs');});
+Route::get('AllBlogs/', function(){return view ('AllBlogs');});//展示所有博文
 Route::get('/AllBlogs','AllBlogsController@AllBlogs');
-Route::get('GivenBlogs/', function(){return view ('GivenBlogs');});
+Route::get('GivenBlogs/', function(){return view ('GivenBlogs');});//展示特定某人博文
 Route::get('/GivenBlogs/{uname}','GivenBlogsController@GivenBlogs');
+Route::get('AddBlog/', function(){return view ('AddBlog');});//博文添加界面展示
+Route::get('add', 'AddBlogController@add');
+Route::post('addBlog', 'AddBlogController@addBlog');//处理博文添加
+Route::get('AddComment/', function(){return view ('AddComment');});//博文添加界面展示
+Route::get('EditBlog{mid}/', function(){return view ('EditBlog');});//修改博文
 
 
 

@@ -23,7 +23,7 @@ class AllBlogsController extends Controller
 
     public function AllBlogs(){
 
-        $Blogs = DB::select('select * from msg ');
+        $Blogs = DB::select('select * from msg where is_delete = ?', [0]);
 
         return view('AllBlogs',['Blogs'=> $Blogs]);
     }

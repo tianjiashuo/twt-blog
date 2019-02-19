@@ -25,7 +25,7 @@ class GivenBlogsController extends Controller
      */
     public function GivenBlogs($uname)
     {
-        $Blogs = DB::select('select * from msg where uname = ?',[$uname]);
+        $Blogs = DB::select('select * from msg where (uname , is_delete ) = (? , ?)',[$uname , 0]);
 
         return view('GivenBlogs',['Blogs'=> $Blogs]);
     }
