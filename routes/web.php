@@ -48,3 +48,4 @@ Route::get('/GivenBlogs/{uname}','GivenBlogsController@GivenBlogs');
 
 
 
+

@@ -24,8 +24,8 @@
                         <br>
                         <font size = "3">
                             @for($i = 0; $i < count($Blogs) ; $i ++)
-                                <a href ="http://127.0.0.1:8080/displayBlog/{{$Blogs[$i]->mid}}">{{$Blogs[$i] -> title}}</a> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{$Blogs[$i]-> addtime}}
-                                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href ="http://127.0.0.1:8080/GivenBlogs/{{$Blogs[$i]->uname}}">{{$Blogs[$i]-> uname}}</a>
+                                <a href ="{{env('BASE_URL')}}displayBlog/{{$Blogs[$i]->mid}}">{{$Blogs[$i] -> title}}</a> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{$Blogs[$i]-> addtime}}
+                                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href ="{{env('BASE_URL')}}GivenBlogs/{{$Blogs[$i]->uname}}">{{$Blogs[$i]-> uname}}</a>
                         </font>
                         <br>
                         @endfor
