@@ -27,7 +27,7 @@
                     </font>
                     <br>
                     <h3>
-                    Comment
+                    Comment &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href ="{{env('BASE_URL')}}AddComment/{{$Blogs[0]->mid}}">评论</a>
                     </h3>
                     <br>
                     <font size = '3'>

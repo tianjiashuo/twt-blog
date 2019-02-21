@@ -48,7 +48,7 @@ Route::get('/GivenBlogs/{uname}','GivenBlogsController@GivenBlogs');
 //Route::get('AddBlog/', function(){return view ('AddBlog');});//博文添加界面展示
 Route::get('add', 'AddBlogController@add');
 Route::post('addBlog', 'AddBlogController@addBlog');//处理博文添加
-Route::get('AddComment/', function(){return view ('AddComment');});//博文添加界面展示
+Route::get('/AddComment/{mid}', 'AddCommentController@addComment');//博文添加界面展示
 Route::get('EditBlog{mid}/', function(){return view ('EditBlog');});//修改博文
 
 
