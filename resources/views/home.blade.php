@@ -16,7 +16,7 @@
                     <h2>
                     Welcome, {{$username}}
                     </h2>
-                        <a href="{{env('BASE_URL')}}AddBlog">发表博文</a>
+                        <a href="{{env('BASE_URL')}}AddBlog_">发表博文</a>
                     <br>
                     <br>
                     <h3>
