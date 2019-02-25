@@ -79,7 +79,8 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    <a href="{{env('BASE_URL')}}AllBlogs">沙雕论坛</a>
+
                 </div>
 
                 <div class="links">
@@ -91,5 +92,7 @@
                 </div>
             </div>
         </div>
+
+
     </body>
 </html>
