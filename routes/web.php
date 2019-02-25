@@ -54,6 +54,8 @@ Route::get('EditBlog{mid}/', function(){return view ('EditBlog');});//修改博�
 
 Route::get('/AddBlog_', 'AddBlogController@index');
 Route::post('/AddBlog', 'AddBlogController@addBlog');//博文添加
-
+Route::get('/EditBlog_/{mid}', 'EditBlogController@index');
+Route::post('/EditBlog/{mid}', 'EditBlogController@EditBlog');
+//修改博文
 
 
