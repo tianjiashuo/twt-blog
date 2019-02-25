@@ -32,8 +32,6 @@
                     <br>
                     <font size = '3'>
                     @for($i = 0; $i < count($Comment) ; $i ++)
-                    {{$Comment[$i]-> cid}}
-                    &nbsp&nbsp&nbsp
                     {{$Comment[$i]-> uname}}
                     <br>
                     {{$Comment[$i]-> content}}
