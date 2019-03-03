@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 
 
-class AddCommentcontroller extends Controller
+class Commentcontroller extends Controller
 {
 
      public function __construct()
