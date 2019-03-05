@@ -10,7 +10,7 @@ class Comment extends Model
     public $timestamps = false;
 
 
-    public static function addComment(Request $request,$bid){
+    /*public static function addComment(Request $request,$bid){
 
         
     }
@@ -28,5 +28,9 @@ class Comment extends Model
     public static function getCommentByAuthor($uid){
         $result = self::where('uid',$uid)->get();
         return $result;
-    }
+    }*/
+    public static function displayBlog($mid){
+    $Comment = self::where('mid',$mid)->get();
+    return $Comment;
+    }   
 }

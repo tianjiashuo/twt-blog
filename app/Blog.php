@@ -6,10 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Blog extends Model
 {
-    protected $table = 'blog';
+    protected $table = 'msg';
     public $timestamps = false;
     
-    public static function getAllBlog(){
+    /*public static function getAllBlog(){
         $result = self::get();
         return $result;
     }
@@ -26,5 +26,14 @@ class Blog extends Model
 
     public static function addBlog($info){
         //还没写
+    }*/
+    public static function displayBlog($mid)
+    {
+        $Blogs = self::where('mid',$mid)->get();
+        return $Blogs;
+    }
+    public static function AllBlogs(){
+        $Blogs = self::where('is_delete',0)->get();
+        return $Blogs;
     }
 }

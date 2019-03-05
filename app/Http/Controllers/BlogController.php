@@ -18,7 +18,7 @@ class BlogController extends Controller
     }
 
 
-    
+
     public function InputAddBlog ()
     {
         return view('AddBlog');
@@ -41,7 +41,7 @@ class BlogController extends Controller
 
     public function AllBlogs(){
 
-        $Blogs = DB::select('select * from msg where is_delete = ?', [0]);
+        $Blogs = Blog::AllBlogs();
 
         return view('AllBlogs',['Blogs'=> $Blogs]);
     }
@@ -56,12 +56,12 @@ class BlogController extends Controller
     {
         
         //$uid = $uname;
-        $Blogs = DB::select('select * from msg where mid = ?',[$mid]);
+        $Blogs = Blog::displayBlog($mid);
         //$Blogs = DB::select('select title from msg where mid = ?',[$mid]);
         //$Time = DB::select('select addtime from msg where mid = ?',[$mid]);
        // $Content = DB::select('select content from msg where mid = ?',[$mid]);
         //$Author = DB::select('select uname from msg where mid = ?',[$mid]);
-        $Comment = DB::select('select * from comment where mid = ?',[$mid]);
+        $Comment = Comment::displayBlog($mid);
         //$CommentContent = DB::select('select content from comment where mid = ?',[$mid]);
         //$CommentUsername  = DB::select('select uname from comment where mid = ?',[$mid]);
         //$CommentTime = DB::select('select addtime from comment where mid = ?',[$mid]);
